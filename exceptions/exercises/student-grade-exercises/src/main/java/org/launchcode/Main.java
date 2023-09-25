@@ -7,7 +7,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         // Test out your Divide() function!
-       System.out.println(Divide(25,5));
+       System.out.println(Divide(25,0));
 
 
         HashMap<String, String> studentFiles = new HashMap<>();
@@ -27,18 +27,22 @@ public class Main {
     public static int Divide(int x, int y)
     {
         // Write code here!
+        int z=0;
+        try {
+            z=(x / y);
+            if (y <= 0) {
+                throw new ArithmeticException("Y value is below zero" + y);
+            }
 
-        if(y<=0) {
-            try {
 
-                throw new ArithmeticException("Y value is below zero");
-            } catch (ArithmeticException e) {
+        }
+        catch (ArithmeticException e) {
                 e.printStackTrace();
             }
 
-        }
+        return z;
 
-        return (x / y);
+
     }
 
     public static int CheckFileExtension(String fileName)
